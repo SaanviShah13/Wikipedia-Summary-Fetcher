@@ -40,19 +40,19 @@ export default function Home() {
       <SearchHistory searchHistory={searchHistory} onSelect={fetchSummary} />
 
       {/* Main Content */}
-      <div style={{ flex: 1, padding: "20px", textAlign: "center" }}>
-        <h1>Wikipedia Summary Fetcher</h1>
+      <div style={{ flex: 1, padding: "20px", textAlign: "center", backgroundColor:"#1E201E"}}>
+        <h1 className="text-[#ECDFCC] text-4xl font-bold mb-8 mt-10 ">Wikipedia Summary Fetcher</h1>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Enter a topic..."
-          style={{ padding: "10px", width: "80%", marginBottom: "10px" }}
+          style={{ padding: "10px", width: "80%", marginBottom: "10px", backgroundColor:"#3C3D37", borderRadius:"8px", border:"none", color:"white" }}
         />
-        <button onClick={() => fetchSummary()} style={{ padding: "10px", marginLeft: "10px" }}>
+        <button onClick={() => fetchSummary()} style={{ padding: "10px", marginLeft: "10px", backgroundColor: "#697565", color: "white", borderRadius: "8px" }}>
           {loading ? "Loading..." : "Fetch Summary"}
         </button>
-        {summary && <p style={{ marginTop: "20px" }}>{summary}</p>}
+        {summary && <p style={{ marginTop: "30px", color:"offwhite", fontSize:"20px", marginLeft:"40px", marginRight:"40px", lineHeight:"30px" }}>{summary}</p>}
       </div>
     </div>
   );
