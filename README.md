@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wikipedia Summary Fetcher
 
-## Getting Started
+A simple web application that fetches Wikipedia summaries based on user queries. Built using **Next.js**, **TypeScript**, and **Wikipedia API**.
 
-First, run the development server:
+## Features
+- ✅ Fetch summaries of Wikipedia topics
+- ✅ Keep a history of past searches
+- ✅ Click on past searches to retrieve summaries instantly
+- ✅ Minimalistic and responsive UI
 
-```bash
+## Technologies Used
+- **Next.js** (React framework for server-side rendering and API routes)
+- **TypeScript** (Static typing for better code maintainability)
+- **Wikipedia API** (Fetching summary data)
+- **Tailwind CSS** (Styling)
+
+## Installation & Setup
+
+### Clone the Repository
+```sh
+git clone https://github.com/your-username/wikipedia-summary-fetcher.git
+cd wikipedia-summary-fetcher
+```
+
+### Install Dependencies
+```sh
+npm install
+# or
+yarn install
+```
+
+### Run the Development Server
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Folder Structure
+```
+📦 wikipedia-summary-fetcher
+ ┣ 📂 components
+ ┃ ┗ 📜 SearchHistory.tsx    # Component for displaying search history
+ ┣ 📂 app
+ ┃ ┗ 📂 api
+ ┃ ┃ ┗ 📜 wiki.ts            # API route to fetch Wikipedia summaries
+ ┣ 📜 page.tsx               # Main page with input, button, and summary display
+ ┣ 📜 package.json           # Project dependencies
+ ┗ 📜 README.md              # Project documentation
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How It Works
+- User enters a topic in the search bar and clicks "Fetch Summary".
+- The app fetches a summary from Wikipedia using the `/api/wiki` route.
+- The result is displayed on the screen.
+- The search term is saved in the search history.
+- Clicking on a past search instantly re-fetches its summary.
 
-## Learn More
+## API Endpoint
+- **Route:** `/api/wiki?query=<search-term>`
+- **Method:** `GET`
+- **Response:**
+```json
+{
+  "summary": "Wikipedia summary of the topic."
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Possible Enhancements
+- Add support for fetching images from Wikipedia
+- Improve UI with animations and transitions
+- Add error handling for invalid queries
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
+This project is open-source under the **MIT License**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
+📌 **Author:** Your Name  
+📌 **GitHub:** [your-username](https://github.com/your-username)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

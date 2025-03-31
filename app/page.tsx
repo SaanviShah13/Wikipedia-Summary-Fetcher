@@ -4,12 +4,20 @@ import { useState } from "react";
 import SearchHistory from "./components/SearchHistory";
 
 export default function Home() {
+  // setQuery is a function provided by useState that allows you to update the 'query' state
+  // When you call setQuery with a new value, React will:
+  // 1. Update the query state with the new value
+  // 2. Trigger a re-render of the component with the new state
+  // Example: setQuery("new search term") will update query to "new search term"
   const [query, setQuery] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
 
   const fetchSummary = async (searchQuery?: string) => {
+    // searchQuery is an optional parameter passed to fetchSummary (e.g. from SearchHistory clicks)
+    // query is the current value in the search input box (controlled by useState)
+    // This line uses searchQuery if provided, otherwise falls back to query state
     const searchTerm = searchQuery || query;
     if (!searchTerm) return;
 
@@ -18,6 +26,9 @@ export default function Home() {
     setSummary("");
 
     try {
+      // encodeURIComponent() encodes special characters in a URI component
+      // For example: "hello world" -> "hello%20world"
+      // This ensures the search term is properly formatted for use in a URL
       const response = await fetch(`/api/wiki?query=${encodeURIComponent(searchTerm)}`);
       const data = await response.json();
 
