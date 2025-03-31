@@ -3,10 +3,10 @@
 A simple web application that fetches Wikipedia summaries based on user queries. Built using **Next.js**, **TypeScript**, and **Wikipedia API**.
 
 ## Features
-- ✅ Fetch summaries of Wikipedia topics
-- ✅ Keep a history of past searches
-- ✅ Click on past searches to retrieve summaries instantly
-- ✅ Minimalistic and responsive UI
+- Fetch summaries of Wikipedia topics
+- Keep a history of past searches
+- Click on past searches to retrieve summaries instantly
+- Minimalistic and responsive UI
 
 ## Technologies Used
 - **Next.js** (React framework for server-side rendering and API routes)
@@ -73,10 +73,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - Improve UI with animations and transitions
 - Add error handling for invalid queries
 
-## License
-This project is open-source under the **MIT License**.
-
 ---
-📌 **Author:** Your Name  
-📌 **GitHub:** [your-username](https://github.com/your-username)
+📌 **Author:** Saanvi Shah 
+
 
